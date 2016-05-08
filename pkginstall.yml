@@ -1,0 +1,6 @@
+---
+- hosts: droplets
+  remote_user: root
+   tasks:
+    - name: Check if htop package is installed
+    command: rpm -q

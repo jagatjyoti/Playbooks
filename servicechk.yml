@@ -1,0 +1,14 @@
+---
+ - hosts: droplets
+   remote_user: root
+   
+   tasks:
+   - name: Check if service httpd running
+     service: name=httpd state=running
+     notify:
+     - start apache
+	  
+   handlers: 
+   - name: start apache
+     service: name=httpd state=started	
+...

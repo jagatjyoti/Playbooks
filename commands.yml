@@ -1,0 +1,15 @@
+---
+ - hosts: droplets
+   remote_user: root
+
+   tasks:
+
+    - name: Check uptime
+      command: uptime
+    
+    - name: Get IP address 
+      command: ifconfig 
+
+    - name: Check free RAM
+      command: free -m 
+... 
