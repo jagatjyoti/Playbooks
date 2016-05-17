@@ -1,0 +1,9 @@
+---
+  - hosts: droplets
+    remote_user: root
+ 
+    tasks: 
+       - name: Add a user to the host
+         user: name=alex shell=/bin/bash append=yes
+
+...
