@@ -1,0 +1,13 @@
+---
+  - hosts: droplets
+    remote_user: root
+ 
+    tasks:
+     
+       -file: path=/var/tmp/foo.txt state=touch mode=0755
+ 
+       -copy: src=/var/tmp/foo.txt dest=/etc/foo.txt owner=root group=root mode=0755
+ 
+       -script: /home/luckee/scripts/findlarfile.sh
+ 
+...
