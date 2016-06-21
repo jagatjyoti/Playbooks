@@ -1,0 +1,8 @@
+--- 
+ - hosts: droplets
+   remote_user: root 
+
+   tasks: 
+   - name: Run python script
+     script: /home/luckee/python/userfind.py
+... 
