@@ -1,0 +1,15 @@
+---
+- hosts: droplets
+   remote_user: root
+ 
+   tasks:
+ 
+    - name: Copy package to target machines
+      synchronize: src=/var/tmp/apache-tomcat-6.0-Linux/ dest=/tmp/apache-tomcat-6.0-Linux/
+ 
+    - name: Run installation and verification script
+      script: /home/tomcat_install.sh
+      register: out
+ 
+    - debug: var=out.stdout_lines
+...
