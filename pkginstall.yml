@@ -1,6 +1,10 @@
 ---
 - hosts: droplets
   remote_user: root
-   tasks:
+
+  tasks:
     - name: Check if htop package is installed
-    command: rpm -q
+      command: rpm -qa | grep htop
+      register: out
+
+...
