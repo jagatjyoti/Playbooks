@@ -6,7 +6,7 @@
    - name: Check if service httpd running
      service: name=httpd state=running
      notify:
-     - start apache
+        - start apache
 	  
    handlers: 
    - name: start apache
